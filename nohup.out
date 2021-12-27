@@ -1,0 +1,81 @@
+Traceback (most recent call last):
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 209, in run
+    self.sleep()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 357, in sleep
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/opt/anaconda3/envs/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+nohup: gunicorn: No such file or directory
+nohup: gunicorn: No such file or directory
+Traceback (most recent call last):
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 209, in run
+    self.sleep()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 357, in sleep
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 240, in handle_chld
+    def handle_chld(self, sig, frame):
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/opt/anaconda3/envs/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/Users/alex/opt/anaconda3/envs/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2021-12-26 15:42:53,955 featuretools.utils - WARNING    The schema version of the saved features(6.0.0) is no longer supported by this version of featuretools. Attempting to load features ...
+2021-12-26 15:42:53,966 featuretools.utils - WARNING    The schema version of the saved entityset(5.1.0) is no longer supported by this version of featuretools. Attempting to load entityset ...
+2021-12-26 15:42:54,220 featuretools.utils - WARNING    The schema version of the saved features(6.0.0) is no longer supported by this version of featuretools. Attempting to load features ...
+2021-12-26 15:42:54,221 featuretools.utils - WARNING    The schema version of the saved entityset(5.1.0) is no longer supported by this version of featuretools. Attempting to load entityset ...
+2021-12-26 15:59:54,671 featuretools.entityset - WARNING    index CAIS_Account_id not found in dataframe, creating new integer column
+2021-12-26 15:59:54,679 featuretools.entityset - WARNING    index CAPS_Application_id not found in dataframe, creating new integer column
+2021-12-26 15:59:54,692 featuretools.entityset - WARNING    index CAIS_Account_History_id not found in dataframe, creating new integer column

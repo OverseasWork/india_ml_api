@@ -1,0 +1,11 @@
+127.0.0.1:58624 - "GET /docs HTTP/1.1" 200
+127.0.0.1:58624 - "GET /openapi.json HTTP/1.1" 200
+127.0.0.1:58630 - "GET /docs HTTP/1.1" 200
+127.0.0.1:58630 - "GET /openapi.json HTTP/1.1" 200
+127.0.0.1:60914 - "GET / HTTP/1.1" 404
+127.0.0.1:60914 - "GET /favicon.ico HTTP/1.1" 404
+127.0.0.1:60915 - "GET /docs HTTP/1.1" 200
+127.0.0.1:60919 - "GET /openapi.json HTTP/1.1" 200
+127.0.0.1:60937 - "GET /v3/report/score HTTP/1.1" 404
+127.0.0.1:60938 - "POST /v3/report/score HTTP/1.1" 404
+127.0.0.1:60940 - "POST /v1/report/score HTTP/1.1" 200

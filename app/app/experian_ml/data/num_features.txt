@@ -1,0 +1,35 @@
+MEAN(CAIS_Account_History.Days_Past_Due)
+SUM(CAIS_Account_History.Year)
+Outstanding_Balance_Secured_Percentage = STD(CAIS_Account.Amount_Past_Due)
+CreditAccountActive
+MEAN(CAIS_Account.Repayment_Tenure)
+MEDIAN(CAIS_Account_History.Year)
+TotalCAPSLast180Days = TotalCAPSLast90Days
+MAX(CAPS_Application.Amount_Financed)
+MAX(CAIS_Account_History.Days_Past_Due) = SUM(CAIS_Account_History.Days_Past_Due)
+MODE(CAIS_Account_History.Month)
+COUNT(CAPS_Application)
+MEDIAN(CAPS_Application.Duration_Of_Agreement)
+Outstanding_Balance_UnSecured
+IS_NULL(STD(CAIS_Account.Written_Off_Amt_Total))
+MEDIAN(CAIS_Account.Written_Off_Amt_Principal)
+MEAN(CAPS_Application.Amount_Financed)
+MEDIAN(CAIS_Account.Current_Balance) = Outstanding_Balance_Secured_Percentage
+CAPSLast90Days = TotalCAPSLast180Days
+SUM(CAIS_Account.Rate_of_Interest)
+MAX(CAIS_Account_History.Days_Past_Due)
+Outstanding_Balance_Secured_Percentage
+MIN(CAIS_Account.Terms_Duration)
+MODE(CAIS_Account.Account_Status)
+SUM(CAIS_Account.Highest_Credit_or_Original_Loan_Amount)
+MEDIAN(CAIS_Account.Current_Balance) = STD(CAIS_Account.Amount_Past_Due)
+MIN(CAIS_Account.Settlement_Amount)
+MAX(CAIS_Account.Amount_Past_Due) = SUM(CAIS_Account.Amount_Past_Due)
+MODE(CAIS_Account.Account_Status) = MODE(CAPS_Application.Enquiry_Reason)
+Outstanding_Balance_Secured_Percentage = STD(CAIS_Account.Settlement_Amount)
+MEDIAN(CAPS_Application.Amount_Financed)
+MODE(CAIS_Account.Account_Type)
+STD(CAIS_Account_History.Year)
+MEDIAN(CAIS_Account.Current_Balance) = MIN(CAPS_Application.Duration_Of_Agreement)
+TotalCAPSLast7Days
+MAX(CAIS_Account.Rate_of_Interest)
