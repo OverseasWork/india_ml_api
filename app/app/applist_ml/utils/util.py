@@ -27,13 +27,13 @@ def load_model(path):
     return lgb
 
 
-def prob2Score(prob,basePoint=600,PDO=100,odds=30):
+def prob2Score(prob,basePoint=600,PDO=50,odds=30):
     # 将违约概率转化成分数
     y = np.log(prob/(1-prob))
     a = basePoint - y * np.log(odds)
     y2 = a - PDO/np.log(2)*(y)
     score = y2.astype('int')
-    return score
+    return int(score)
 
 
 def load_txt_feat(file: str):

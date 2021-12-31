@@ -35,7 +35,7 @@ def str2num(x):
 class Report(object):
     def __init__(self, reqId: str, reportJson: dict):
         self.reqId = reqId
-        self.reportJson = reportJson.get('INProfileResponse', {})
+        self.reportJson = reportJson
         self.report_summary = self.__report_summary()
         self.CAIS_Account_DETAILS = self.__CAIS_Account_DETAILS()
         self.CAPS_Application_Details = self.__CAPS_Application_Details()

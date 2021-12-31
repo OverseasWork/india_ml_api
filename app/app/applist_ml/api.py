@@ -12,21 +12,17 @@ from app.app.applist_ml.applist_model import AppListML
 appModel = AppListML()
 
 
-def india_ml_main(data):
-
-    reqId = data['reqId']
-    ml_data = data
-    if len(data['data']) == 0:
+def appList_main(reqId:str,appListData:list):
+    """appList主函数"""
+    if len(appListData) == 0:
         log.logger.warning(f'{reqId}: appList is empty --------------------------------')
         return {'reqId': reqId, 'prob':-9999, 'score':-9999,
                 'code': 101, 'msg': '处理成功', 'detail':'输入为空', 'version': 'v1'}
     try:
         log.logger.info(f'{reqId}:starting appList --------------------------------')
-        prob = appModel.applist_ml_predict(ml_data)
-        ml_data['prob'] = prob
-        log.logger.info(f'get appModel prob:{"%s"}' % prob['prob'])
-
-        return {'reqId': reqId, 'prob': prob['prob'], 'score': prob['score'],
+        app_res = appModel.applist_ml_predict(reqId,appListData)
+        log.logger.info(f"get appModel prob:{app_res['prob']},score:{app_res['score']}")
+        return {'reqId': reqId, 'prob': app_res['prob'], 'score': app_res['score'],
                 'code': 100, 'msg': '处理成功', 'version': 'v1'}
     except Exception as error:
         log.logger.error(f'{reqId},-----> {str(error)}')

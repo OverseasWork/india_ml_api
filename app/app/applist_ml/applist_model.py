@@ -2,8 +2,7 @@ import pandas as pd
 import datetime
 import string
 import numpy as np
-from .utils.util import loan_dt, stamp_format, prob2Score, \
-    load_model, load_txt_feat
+from .utils.util import stamp_format, prob2Score, load_model, load_txt_feat
 import sys
 
 sys.path.append('..')
@@ -32,9 +31,10 @@ class AppListML:
         d3['comp_app_rate_%sd' % days] = d3['comp_app_cnt_%sd' % days] / d3['app_cnt_%sd' % days]
         return d3
 
-    def re_db(self, data):
+    def re_db(self,reqId:str,data:pd.DataFrame):
 
-        s = pd.DataFrame(index=data.reqId.unique())
+        data['reqId'] = reqId
+        s = pd.DataFrame(index=pd.DataFrame({'reqId':[reqId]}).reqId.unique())
         for i in [3, 7, 15, 30, 60, 90, 180]:
             res = self.get_params(data, i, self.comp.package_name.unique())
             s = pd.merge(s, res, left_index=True, right_index=True, how='left')
@@ -118,11 +118,8 @@ class AppListML:
         all_data3.fillna(0, inplace=True)
         return all_data3
 
-    def applist_ml_predict(self, data: dict):
-        """
-        """
-        appList = data['data']
-        i1 = [[data['reqId'], i['appName'], i['packageName'], i['firstInstallTime'], i['lastUpdateTime']]
+    def applist_ml_predict(self,reqId:str,appList:list):
+        i1 = [[reqId, i['appName'], i['packageName'], i['firstInstallTime'], i['lastUpdateTime']]
               for i in appList]
         res_data = pd.DataFrame(i1, columns=['reqId', 'appName', 'packageName', 'firstInstallTime',
                                              'lastUpdateTime'])
@@ -138,9 +135,9 @@ class AppListML:
         res_data['appName'] = res_data['appName'].str.replace('[^\w\s]', '')
         res_data['appName'] = res_data['appName'].apply(
             lambda x: ''.join(x for x in x.split() if not x.isdigit()))
-        res_data2 = self.re_db(res_data)
+        res_data2 = self.re_db(reqId,res_data)
         comp = [i.strip() for i in self.appname]
-        test_matrix = pd.DataFrame(columns=comp, index=[data['reqId']])
+        test_matrix = pd.DataFrame(columns=comp, index=[reqId])
         for i in res_data[['reqId', 'appName']].values.tolist():
             if i[1] in comp:
                 test_matrix.loc[i[0], i[1]] = 1
@@ -150,5 +147,4 @@ class AppListML:
         res_data4.fillna(0, inplace=True)
         preds = self.lgb.predict_proba(res_data4)[:, 1][0]
         score = prob2Score(preds)
-        return {'reqId': data['reqId'], 'prob': round(preds, 2), 'score': int(score), 'msg': 'success',
-                'data': {k: str(v) for k, v in res_data2.to_dict(orient='records')[0].items()}}
+        return {'reqId': reqId, 'prob': round(preds, 2), 'score': int(score)}

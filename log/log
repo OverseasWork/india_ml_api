@@ -1,0 +1,53 @@
+2021-12-31 00:25:34,174 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:24] - INFO: get appModel prob:0.54,score:588
+2021-12-31 00:25:34,175 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:19] - INFO: 2021039458294572:starting experian --------------------------------
+2021-12-31 00:25:34,271 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:21] - INFO: get experian score:588
+2021-12-31 00:25:34,271 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:104] - INFO: 2021039458294572:finish predict,score:584,level:D --------------------------------
+2021-12-31 01:18:43,194 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:45] - INFO: 2021039458294572: starting run --------------------------------
+2021-12-31 01:18:43,195 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:22] - INFO: 2021039458294572:starting appList --------------------------------
+2021-12-31 01:18:43,431 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:24] - INFO: get appModel prob:0.52,score:594
+2021-12-31 01:18:43,431 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:19] - INFO: 2021039458294572:starting experian --------------------------------
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:21] - INFO: get experian score:656
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:83] - INFO: age:25:-4
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:102] - INFO: concatApplyPassOdNum==concatApplyOverdueNum,0:-10
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:115] - INFO: concatNum:100,+10
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:129] - INFO: 等级修正前:score:652,level:B
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:136] - INFO: 等级修正后:score:652,level:B
+2021-12-31 01:18:43,608 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:150] - INFO: 2021039458294572:finish predict,score:652,level:B --------------------------------
+2021-12-31 01:22:13,669 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:45] - INFO: 2021039458294572: starting run --------------------------------
+2021-12-31 01:22:13,669 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:22] - INFO: 2021039458294572:starting appList --------------------------------
+2021-12-31 01:22:14,206 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:24] - INFO: get appModel prob:0.52,score:594
+2021-12-31 01:22:14,206 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:19] - INFO: 2021039458294572:starting experian --------------------------------
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:21] - INFO: get experian score:656
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:86] - INFO: age:36:+3
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:102] - INFO: concatApplyPassOdNum==concatApplyOverdueNum,0:-10
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:106] - INFO: concatApplyRatio==concatApplyRatio:0.2,concatApplyNum:5:-5
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:115] - INFO: concatNum:200,+10
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:120] - INFO: gender is Female,+12
+2021-12-31 01:22:14,602 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:129] - INFO: 等级修正前:score:666,level:B
+2021-12-31 01:22:14,603 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:136] - INFO: 等级修正后:score:666,level:B
+2021-12-31 01:22:14,603 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:150] - INFO: 2021039458294572:finish predict,score:666,level:B --------------------------------
+2021-12-31 01:22:48,686 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:45] - INFO: 2021039458294572: starting run --------------------------------
+2021-12-31 01:22:48,686 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:22] - INFO: 2021039458294572:starting appList --------------------------------
+2021-12-31 01:22:48,961 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:24] - INFO: get appModel prob:0.52,score:594
+2021-12-31 01:22:48,961 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:19] - INFO: 2021039458294572:starting experian --------------------------------
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:21] - INFO: get experian score:656
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:86] - INFO: age:36:+3
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:98] - INFO: concatApplyNum:3,concatApplyNum:3:-3
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:102] - INFO: concatApplyPassOdNum==concatApplyOverdueNum,0:-10
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:115] - INFO: concatNum:200,+10
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:120] - INFO: gender is Female,+12
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:129] - INFO: 等级修正前:score:676,level:B
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:136] - INFO: 等级修正后:score:676,level:B
+2021-12-31 01:22:49,128 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:150] - INFO: 2021039458294572:finish predict,score:676,level:B --------------------------------
+2021-12-31 01:27:02,654 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:45] - INFO: 2021039458294572: starting run --------------------------------
+2021-12-31 01:27:02,654 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:22] - INFO: 2021039458294572:starting appList --------------------------------
+2021-12-31 01:27:02,884 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/applist_ml/api.py[line:24] - INFO: get appModel prob:0.52,score:594
+2021-12-31 01:27:02,884 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:19] - INFO: 2021039458294572:starting experian --------------------------------
+2021-12-31 01:27:03,048 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/experian_ml/api.py[line:21] - INFO: get experian score:656
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:86] - INFO: age:36:+3
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:98] - INFO: concatApplyNum:3,concatApplyNum:3:10
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:115] - INFO: concatNum:200,+5
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:120] - INFO: gender is Female,+12
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:129] - INFO: 等级修正前:score:695,level:B
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:136] - INFO: 等级修正后:score:695,level:B
+2021-12-31 01:27:03,049 - /Users/huangsir/Desktop/中子数科/india_ml_api/app/app/risk_score.py[line:150] - INFO: 2021039458294572:finish predict,score:695,level:B --------------------------------

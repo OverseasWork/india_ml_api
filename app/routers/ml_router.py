@@ -6,24 +6,14 @@
 # @Desc: 模型路由
 
 from fastapi import APIRouter
-from app.app.applist_ml.core import AppData
-from app.app.applist_ml.api import india_ml_main
 
-from app.app.experian_ml.input_valid import InputData
-from app.app.experian_ml.api import experian_report_credit_score
+from app.app.api import risk_main
+from app.app.data_model import Data
 
 ml_router = APIRouter()
 
-
-@ml_router.post('/v1/app/score', tags=['appList评分'])
-async def app_score(data: AppData):
+@ml_router.post('/v1/app/risk_score',tags=['风险评分评级'])
+async def risk_score(data:Data):
     data = data.dict()
-    res = india_ml_main(data)
-    return res
-
-
-@ml_router.post('/v1/report/score', tags=['征信报告评分'])
-async def report_score(data: InputData):
-    data = data.dict()
-    res = experian_report_credit_score(data)
+    res = risk_main(data)
     return res

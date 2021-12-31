@@ -5,4 +5,5 @@
 # @Software: PyCharm
 # @Desc:数据模型
 
-from .data_model import AppList, AppData
+from .data_model import AppList
+from .applist_example import appListExample
