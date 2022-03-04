@@ -8,8 +8,8 @@
 from conf.log_config import log
 
 from app.app.applist_ml.api import appList_main
-from app.app.experian_ml.api import experian_main
-
+from app.app.sms_label_ml.api import smsList_main
+# from app.app.experian_ml.api import experian_main
 
 def get_level(experian_score, appList_score):
     """获取客户等级"""
@@ -41,12 +41,15 @@ def risk_score(data: dict):
     """主函数"""
     reqId = data['reqId']
     appList = data['appList']
-    experian = data['experianReport']
+    # experian = data['experianReport']
+    smsList = data['smsList']
     log.logger.info(f'{reqId}: starting run --------------------------------')
     appList_res = appList_main(reqId, appList)
-    experian_res = experian_main(reqId, experian)
+    # experian_res = experian_main(reqId, experian)
+    smsList_res = smsList_main(reqId,smsList)
 
     detail = []
+
     if appList_res['code'] == 101:
         appList_score = -9999
     elif appList_res['code'] == 100:
@@ -54,21 +57,31 @@ def risk_score(data: dict):
     else:
         detail.append({'appList': appList_res['detail']})
         appList_score = -9998
-    if experian_res['code'] == 101:
-        experian_score = -9999
-    elif experian_res['code'] == 100:
-        experian_score = experian_res['score']
+
+    # if experian_res['code'] == 101:
+    #     experian_score = -9999
+    # elif experian_res['code'] == 100:
+    #     experian_score = experian_res['score']
+    # else:
+    #     detail.append({'experian': experian_res['detail']})
+    #     experian_score = -9998
+
+    if smsList_res['code'] == 101:
+        smsList_score = -9999
+    elif smsList_res['code'] == 100:
+        smsList_score = smsList_res['score']
     else:
-        detail.append({'experian': experian_res['detail']})
-        experian_score = -9998
+        detail.append({'smsList': smsList_res['detail']})
+        smsList_score = -9998
+
 
     # 客户等级
-    level = get_level(appList_score=appList_score, experian_score=experian_score)
+    level = get_level(appList_score=appList_score, experian_score=smsList_score)
 
     age = data['age']
     gender = data['gender']
     zeros = [-9999, -9998]
-    scoreL = [appList_score, experian_score]
+    scoreL = [appList_score, smsList_score]
     appList_experian_score = set(scoreL) - set(zeros)
 
     if appList_experian_score:
@@ -147,5 +160,5 @@ def risk_score(data: dict):
         detail = 'success'
 
     result = {'reqId': reqId, 'score': score, 'level': level, 'details': detail}
-    log.logger.info(f'{reqId}:finish predict,score:{score},level:{level} --------------------------------')
+    log.logger.info(f'{reqId}:finish predict,score:{score},level:{level} --------------------------------\n')
     return result

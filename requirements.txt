@@ -11,3 +11,6 @@ uvloop==0.15.2
 httptools==0.1.1
 openpyxl==3.0.9
 Cython==0.29.26
+dill==0.3.4
+tensorflow==2.8.0
+keras==2.8.0

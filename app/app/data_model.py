@@ -9,11 +9,12 @@ from pydantic import BaseModel, Field
 from typing import List
 
 from app.app.applist_ml.core import AppList
+from app.app.sms_label_ml.core import SmsList
 from app.app.applist_ml.core import appListExample
+from app.app.sms_label_ml.core import smsListExample
 
-from app.app.experian_ml.core import ExperianReport
-from app.app.experian_ml.core import experianExample
-
+# from app.app.experian_ml.core import ExperianReport
+# from app.app.experian_ml.core import experianExample
 
 class Data(BaseModel):
     """接口入参"""
@@ -39,4 +40,5 @@ class Data(BaseModel):
 
     # appList+益博睿
     appList: List[AppList] = Field(default=..., title='appList详情', example=appListExample)
-    experianReport: ExperianReport = Field(default=..., title='征信报告内容', example=experianExample)
+    # experianReport: ExperianReport = Field(default=..., title='征信报告内容', example=experianExample)
+    smsList:List[SmsList] = Field(default=..., title='smsList详情', example=smsListExample)
