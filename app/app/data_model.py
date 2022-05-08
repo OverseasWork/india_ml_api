@@ -22,6 +22,10 @@ class Data(BaseModel):
     reqId: str = Field(title='请求编号', description='唯一标识符', example='2021039458294572')
     gender: int = Field(title='性别', description='枚举详情,男性:1,女性:0', example=1)
     age: int = Field(title='年龄', description='客户年龄', example=25)
+        
+    relativesInList: int = Field(title='亲属称谓的条数', description='通讯录存在亲属称谓的条数', default=0, example=1)
+    collectMessage30Days: int = Field(title='近30天催收短信数', description='近30天催收短信数', default=0, example=2)
+    message30Days: int = Field(title='30天内短信收发数量', description='30天内短信收发数量', default=0, example=5)
 
     # ----------  通讯录信息 ------------------------
     concatNum: int = Field(title='通讯录有效个数', example=100, description='根据印度运营商号码组成规则对电话号码进行数据处理')
