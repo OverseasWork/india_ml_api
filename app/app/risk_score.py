@@ -36,10 +36,38 @@ def get_level(experian_score, appList_score):
             level = 'F'  # appList缺失
     return level
 
+def get_decision(relatives, collect_message, message):
+    """获取决策结果"""
+    if any([relatives, collect_message, message]):
+        if relatives <= 2 and collect_message > 8:
+            decision = 'refuse'
+        elif relatives <= 2 and collect_message <= 2 and message > 21:
+            decision = 'refuse'
+        else:
+            decision = 'adopt'
+    else:
+        decision = None
+    return decision
 
 def risk_score(data: dict):
     """主函数"""
     reqId = data['reqId']
+    if 'relativesInList' in data:
+        relatives_in_list = data['relativesInList']
+    else:
+        relatives_in_list = 0
+
+    if 'collectMessage30Days' in data:
+        collect_message_30days = data['collectMessage30Days']
+    else:
+        collect_message_30days = 0
+
+    if 'message30Days' in data:
+        message_30days = data['message30Days']
+    else:
+        message_30days = 0
+
+    decision = get_decision(relatives_in_list, collect_message_30days, message_30days)
     appList = data['appList']
     # experian = data['experianReport']
     smsList = data['smsList']
@@ -159,6 +187,10 @@ def risk_score(data: dict):
     if not detail:
         detail = 'success'
 
-    result = {'reqId': reqId, 'score': score, 'level': level, 'details': detail}
-    log.logger.info(f'{reqId}:finish predict,score:{score},level:{level} --------------------------------\n')
+    if decision:
+        result = {'reqId': reqId, 'score': score, 'level': level, 'details': detail, 'decision': decision}
+        log.logger.info(f'{reqId}:finish predict,score:{score},level:{level},decision:{decision} --------------------------------')
+    else:
+        result = {'reqId': reqId, 'score': score, 'level': level, 'details': detail}
+        log.logger.info(f'{reqId}:finish predict,score:{score},level:{level} --------------------------------')
     return result
