@@ -142,10 +142,10 @@ def risk_score(data: dict):
             score -= 10
             log.logger.info(f"concatApplyPassOdNum==concatApplyOverdueNum,{data['concatApplyOverdueNum']}:-10")
 
-        if data['concatApplyRatio'] == data['concatApplyRatio'] and data['concatApplyNum'] >= 5:
+        if data['concatApplyRatio'] == data['concatRegisterRatio'] and data['concatApplyNum'] >= 5:
             score -= 5
             log.logger.info(
-                f"concatApplyRatio==concatApplyRatio:{data['concatApplyRatio']},concatApplyNum:{data['concatApplyNum']}:-5")
+                f"concatApplyRatio==concatRegisterRatio:{data['concatRegisterRatio']},concatApplyNum:{data['concatApplyNum']}:-5")
 
         if data['concatApplyOverdueNum'] == 0 and data['concatApplyPassOdNum'] >= 3:
             score += 15
